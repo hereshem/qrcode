@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QRCode Generator - Hem Shrestha</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<meta name="keywords" content="webhosting, free space, raspberry pi, pihosting, raspberry hosting server, free hosting server in nepal" />
+    <meta name="description" content="MeroServer is a web hosting service provider in Nepal with Raspberry Pi as Hosting Server. We are here proud to offer the free webhosting service with individual zpanel dashboard and guarantee the customer satisfaction. Any feedback regarding the improvement to our service will be highly appreciated." />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="qrcode.min.js"></script>
+</head>
+<body>
+	<!-- 
+    _    _                     ___   _                    _    _
+   | |  | |                   /  _ \| |                  | |  | |
+   | |__| | ___  _ __ ___     | '_'-| |_   _ _  __   ___ | |  | |_    ___
+   |  __  |/ _ \| '_ ' _  \    \__ \|  _ \| '_|/ _ \/ __\|  | |  _ \ / _  \
+   | |  | |  __/| | | | | |   --,_' | || || / :  __/\__ \| |_ | || || '_' |
+   |_|  |_|\___||_| |_| |_|   \____/|_||_||_|  \___|\___/|___||_||_| \__,_|
+
+    -->
+	<div style="text-align:center;width:80%;max-width:300px;margin-right:auto;margin-left: auto;">
+		<h1>QRCode Generator</h1>
+		<input id="text" placeholder="Write some text here" value="http://www.hemshrestha.com.np" style="text-align:center;width:90%"/>
+		<br><br><br>
+		<div id="qrcode" style="text-align:center;"></div>
+	</div>
+	<script type="text/javascript">
+		var qrcode = new QRCode(document.getElementById("qrcode"), {width : 300, height : 300});
+		var elText = document.getElementById("text");
+		elText.addEventListener("keyup", function(){
+			qrcode.makeCode(elText.value);
+		});
+		qrcode.makeCode(elText.value);
+	</script>
+</body>
+</html>
